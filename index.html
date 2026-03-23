@@ -17,12 +17,12 @@
   <body>
     <div class="page-shell">
       <header class="site-header">
-        <a class="brand" href="#top">
+        <a class="brand" href="#home">
           <span class="brand-mark">MJ</span>
           <span class="brand-text">Madhav Jee</span>
         </a>
         <nav class="site-nav" aria-label="Primary">
-          <a href="#top">Home</a>
+          <a href="#home">Home</a>
           <a href="#about">About Me</a>
           <a href="#education">Education</a>
           <a href="#skills">Skills</a>
@@ -34,7 +34,7 @@
       </header>
 
       <main id="top">
-        <section class="hero section">
+        <section class="hero section" id="home">
           <div class="hero-backdrop" aria-hidden="true">
             <span class="hero-orb hero-orb-one"></span>
             <span class="hero-orb hero-orb-two"></span>
@@ -57,6 +57,16 @@
               and machine learning solutions that turn ideas into practical
               outcomes.
             </p>
+            <div class="hero-notes">
+              <article class="hero-note">
+                <span class="hero-note-label">What I Build</span>
+                <p>Responsive web apps, data dashboards, and practical ML projects with clean execution.</p>
+              </article>
+              <article class="hero-note">
+                <span class="hero-note-label">Core Stack</span>
+                <p>JavaScript, React, Node.js, SQL, Python, and analytics tools for end-to-end problem solving.</p>
+              </article>
+            </div>
             <div class="hero-badges">
               <span>Full-Stack Development</span>
               <span>Data Analytics</span>
@@ -64,7 +74,7 @@
             </div>
             <div class="hero-actions">
               <a class="button button-primary" href="#projects">View Projects</a>
-              <a class="button button-secondary" href="assets/resume.pdf" download="Madhav-Jee-Resume.pdf">Download Resume</a>
+              <a class="button button-secondary" href="assets/resume.pdf" target="_blank" rel="noreferrer">View Resume</a>
               <a class="button button-secondary" href="#contact">Contact Me</a>
             </div>
             <ul class="hero-links">
@@ -91,12 +101,12 @@
                 <span class="metric-label">Current CGPA</span>
               </article>
               <article class="metric-card">
-                <span class="metric-value" data-target="3">0</span>
-                <span class="metric-label">Featured Projects</span>
+                <span class="metric-value" data-target="8" data-suffix="+">0</span>
+                <span class="metric-label">Projects Built</span>
               </article>
               <article class="metric-card">
-                <span class="metric-value" data-target="5">0</span>
-                <span class="metric-label">Certifications</span>
+                <span class="metric-value" data-target="15" data-suffix="+">0</span>
+                <span class="metric-label">Certificates Earned</span>
               </article>
               <article class="metric-card">
                 <span class="metric-value" data-target="18000">0</span>
@@ -120,32 +130,37 @@
             <p class="section-subtext">A builder with equal interest in software and analytics.</p>
           </div>
           <div class="about-layout">
-            <div class="about-card glass-card">
-              <p>
-                My work sits at the intersection of web development, data
-                analysis, and problem solving. I enjoy building interfaces that
-                feel simple to use while keeping the logic underneath reliable and
-                efficient.
-              </p>
-              <p>
-                From student management systems to predictive models and insight
-                dashboards, I like projects that combine structured thinking with
-                visible impact.
-              </p>
-            </div>
-            <div class="about-list">
-              <article class="mini-panel">
-                <h3>What I bring</h3>
-                <p>Strong fundamentals in Python, DSA, and full-stack development.</p>
-              </article>
-              <article class="mini-panel">
-                <h3>How I work</h3>
-                <p>Curious, disciplined, and focused on turning ideas into usable solutions.</p>
-              </article>
-              <article class="mini-panel">
-                <h3>Where I'm growing</h3>
-                <p>Production-ready software, cloud skills, backend depth, and applied ML.</p>
-              </article>
+            <figure class="about-photo glass-card">
+              <img src="assets/about-photo.jpeg" alt="Madhav Jee sitting with a phone in hand" />
+            </figure>
+            <div class="about-content">
+              <div class="about-card glass-card">
+                <p>
+                  My work sits at the intersection of web development, data
+                  analysis, and problem solving. I enjoy building interfaces that
+                  feel simple to use while keeping the logic underneath reliable and
+                  efficient.
+                </p>
+                <p>
+                  From student management systems to predictive models and insight
+                  dashboards, I like projects that combine structured thinking with
+                  visible impact.
+                </p>
+              </div>
+              <div class="about-list">
+                <article class="mini-panel">
+                  <h3>What I bring</h3>
+                  <p>Strong fundamentals in Python, DSA, and full-stack development.</p>
+                </article>
+                <article class="mini-panel">
+                  <h3>How I work</h3>
+                  <p>Curious, disciplined, and focused on turning ideas into usable solutions.</p>
+                </article>
+                <article class="mini-panel">
+                  <h3>Where I'm growing</h3>
+                  <p>Production-ready software, cloud skills, backend depth, and applied ML.</p>
+                </article>
+              </div>
             </div>
           </div>
         </section>
@@ -255,8 +270,56 @@
               <div class="chip-row">
                 <span class="skill-chip"><i class="devicon-mysql-plain colored"></i><span>MySQL</span></span>
                 <span class="skill-chip"><i class="devicon-mongodb-plain colored"></i><span>MongoDB</span></span>
-                <span class="skill-chip"><span class="skill-icon skill-icon-powerbi">BI</span><span>Power BI</span></span>
-                <span class="skill-chip"><span class="skill-icon skill-icon-excel">X</span><span>Excel</span></span>
+                <span class="skill-chip">
+                  <span class="skill-icon skill-icon-powerbi" aria-hidden="true">
+                    <svg viewBox="0 0 64 64" class="skill-icon-svg" focusable="false">
+                      <defs>
+                        <linearGradient id="pbiBar1" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="0%" stop-color="#FFF2A8"></stop>
+                          <stop offset="100%" stop-color="#FFD84D"></stop>
+                        </linearGradient>
+                        <linearGradient id="pbiBar2" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="0%" stop-color="#FBDD6A"></stop>
+                          <stop offset="100%" stop-color="#F2BE1A"></stop>
+                        </linearGradient>
+                        <linearGradient id="pbiBar3" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="0%" stop-color="#F1C52A"></stop>
+                          <stop offset="100%" stop-color="#D79000"></stop>
+                        </linearGradient>
+                      </defs>
+                      <rect x="14" y="28" width="14" height="22" rx="3.5" fill="url(#pbiBar1)"></rect>
+                      <rect x="25" y="16" width="16" height="34" rx="3.5" fill="url(#pbiBar2)"></rect>
+                      <rect x="38" y="6" width="16" height="44" rx="3.5" fill="url(#pbiBar3)"></rect>
+                    </svg>
+                  </span>
+                  <span>Power BI</span>
+                </span>
+                <span class="skill-chip">
+                  <span class="skill-icon skill-icon-excel" aria-hidden="true">
+                    <svg viewBox="0 0 64 64" class="skill-icon-svg" focusable="false">
+                      <defs>
+                        <linearGradient id="excelBg" x1="0" y1="0" x2="1" y2="1">
+                          <stop offset="0%" stop-color="#80E56A"></stop>
+                          <stop offset="55%" stop-color="#2BA84A"></stop>
+                          <stop offset="100%" stop-color="#0C6A33"></stop>
+                        </linearGradient>
+                        <linearGradient id="excelFold" x1="0" y1="0" x2="1" y2="1">
+                          <stop offset="0%" stop-color="#9EF07A"></stop>
+                          <stop offset="100%" stop-color="#63D65B"></stop>
+                        </linearGradient>
+                        <linearGradient id="excelLeft" x1="0" y1="0" x2="1" y2="1">
+                          <stop offset="0%" stop-color="#12753B"></stop>
+                          <stop offset="100%" stop-color="#0A4E28"></stop>
+                        </linearGradient>
+                      </defs>
+                      <rect x="9" y="8" width="46" height="46" rx="10" fill="url(#excelBg)"></rect>
+                      <path d="M37 8h10a8 8 0 0 1 8 8v10H43a6 6 0 0 1-6-6z" fill="url(#excelFold)"></path>
+                      <path d="M9 24c0-4.4 3.6-8 8-8h18v30H17c-4.4 0-8-3.6-8-8z" fill="url(#excelLeft)"></path>
+                      <path d="M19 28h4.6l3.4 5.2 3.3-5.2h4.5l-5.2 7.8 5.4 8.2h-4.7l-3.4-5.5-3.5 5.5H19l5.3-8.2z" fill="#FFFFFF"></path>
+                    </svg>
+                  </span>
+                  <span>Excel</span>
+                </span>
                 <span class="skill-chip"><i class="devicon-jupyter-plain colored"></i><span>Jupyter</span></span>
                 <span class="skill-chip"><i class="devicon-git-plain colored"></i><span>Git</span></span>
                 <span class="skill-chip"><i class="devicon-github-original"></i><span>GitHub</span></span>
@@ -273,17 +336,39 @@
             <p class="section-subtext">Applied coursework focused on building practical software foundations.</p>
           </div>
           <div class="training-card glass-card">
-            <div class="training-topline">
-              <span class="training-badge">LPU</span>
-              <span class="training-duration">Jun 2025 - Jul 2025</span>
+            <div class="training-layout">
+              <div class="training-copy">
+                <div class="training-topline">
+                  <span class="training-badge">LPU</span>
+                  <span class="training-duration">Jun 2025 - Jul 2025</span>
+                </div>
+                <h3>Fundamentals of Data Structures: Learn, Apply and Build Projects</h3>
+                <p class="training-focus">Data Structures using C++</p>
+                <ul class="training-points">
+                  <li>Designed and implemented a Student Marks Management System using C++ structures, vectors, and OOP principles to automate record handling such as adding, deleting, sorting, and searching students.</li>
+                  <li>Optimized data processing accuracy and retrieval speed by integrating validation checks, binary search for efficient lookups, and sorting algorithms for ranking students based on performance.</li>
+                  <li>Enhanced user interaction through a menu-driven console interface with formatted tabular output and ANSI color styling, improving readability and overall usability.</li>
+                </ul>
+              </div>
+              <a
+                class="training-certificate"
+                href="assets/certificates/lpu-summer-training.pdf"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Open LPU Summer Training certificate"
+              >
+                <div class="training-certificate-preview">
+                  <embed
+                    src="assets/certificates/lpu-summer-training.pdf#toolbar=0&navpanes=0&scrollbar=0"
+                    type="application/pdf"
+                  />
+                </div>
+                <div class="training-certificate-meta">
+                  <span class="training-certificate-label">Training Certificate</span>
+                  <span class="training-certificate-link">View Certificate</span>
+                </div>
+              </a>
             </div>
-            <h3>Fundamentals of Data Structures: Learn, Apply and Build Projects</h3>
-            <p class="training-focus">Data Structures using C++</p>
-            <ul class="training-points">
-              <li>Designed and implemented a Student Marks Management System using C++ structures, vectors, and OOP principles to automate record handling such as adding, deleting, sorting, and searching students.</li>
-              <li>Optimized data processing accuracy and retrieval speed by integrating validation checks, binary search for efficient lookups, and sorting algorithms for ranking students based on performance.</li>
-              <li>Enhanced user interaction through a menu-driven console interface with formatted tabular output and ANSI color styling, improving readability and overall usability.</li>
-            </ul>
           </div>
         </section>
 
@@ -459,10 +544,10 @@
             <div class="certificate-header">
               <div>
                 <h3>Certificates</h3>
-                <p class="certificate-intro">Focused learning across AI, cloud, communication, DSA, and responsive web design.</p>
+                <p class="certificate-intro">Focused learning across AI, cloud, communication, DSA, responsive web design, and Adobe tools.</p>
               </div>
               <div class="certificate-summary">
-                <span>5 Verified</span>
+                <span>6 Verified</span>
                 <span>Practical Learning</span>
                 <span>Career Growth</span>
               </div>
@@ -484,7 +569,8 @@
                 <div class="certificate-meta">
                   <p class="certificate-issuer">Infosys</p>
                   <h4>Master Generative AI &amp; Generative AI Tools</h4>
-                  <p>View credential</p>
+                  <p class="certificate-description">Covers the foundations of generative AI and modern AI tools. Explains how prompts, models, and automation can support practical workflows. Shows applied understanding of using AI for real project tasks.</p>
+                  <p class="certificate-link-text">View credential</p>
                 </div>
               </a>
 
@@ -504,7 +590,8 @@
                 <div class="certificate-meta">
                   <p class="certificate-issuer">NPTEL</p>
                   <h4>Cloud Computing</h4>
-                  <p>View credential</p>
+                  <p class="certificate-description">Focuses on core cloud computing models and deployment concepts. Includes virtualization, distributed systems, and service-based architecture basics. Builds understanding of how scalable cloud platforms support modern applications.</p>
+                  <p class="certificate-link-text">View credential</p>
                 </div>
               </a>
 
@@ -524,7 +611,8 @@
                 <div class="certificate-meta">
                   <p class="certificate-issuer">Coursera</p>
                   <h4>Computer Communication</h4>
-                  <p>View credential</p>
+                  <p class="certificate-description">Introduces the fundamentals of computer communication and networking. Covers protocols, data transfer, and reliable system-to-system connectivity. Helps explain how devices and applications exchange information efficiently.</p>
+                  <p class="certificate-link-text">View credential</p>
                 </div>
               </a>
 
@@ -544,7 +632,8 @@
                 <div class="certificate-meta">
                   <p class="certificate-issuer">neocolab</p>
                   <h4>Data Structures and Algorithms</h4>
-                  <p>View credential</p>
+                  <p class="certificate-description">Builds strong problem-solving skills through essential DSA concepts. Covers arrays, linked lists, trees, sorting, searching, and algorithmic thinking. Strengthens coding logic used in technical interviews and software development.</p>
+                  <p class="certificate-link-text">View credential</p>
                 </div>
               </a>
 
@@ -564,7 +653,29 @@
                 <div class="certificate-meta">
                   <p class="certificate-issuer">freeCodeCamp</p>
                   <h4>Responsive Web Design</h4>
-                  <p>View credential</p>
+                  <p class="certificate-description">Covers HTML and CSS for building clean web page structures. Focuses on layouts, responsiveness, and user-friendly interface design. Demonstrates the ability to create websites that work across screen sizes.</p>
+                  <p class="certificate-link-text">View credential</p>
+                </div>
+              </a>
+
+              <a
+                class="certificate-card"
+                href="assets/certificates/adobe-certificate.pdf"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Open Adobe certificate"
+              >
+                <div class="certificate-preview">
+                  <embed
+                    src="assets/certificates/adobe-certificate.pdf#toolbar=0&navpanes=0&scrollbar=0"
+                    type="application/pdf"
+                  />
+                </div>
+                <div class="certificate-meta">
+                  <p class="certificate-issuer">Adobe</p>
+                  <h4>Adobe Certificate</h4>
+                  <p class="certificate-description">Highlights practical Adobe skills used in digital content creation. Involves editing, design presentation, and visual communication workflows. Reflects hands-on ability with creative tools for polished project output.</p>
+                  <p class="certificate-link-text">View credential</p>
                 </div>
               </a>
             </div>

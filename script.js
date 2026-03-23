@@ -28,22 +28,32 @@ const revealObserver = new IntersectionObserver(
 
 revealItems.forEach((item) => revealObserver.observe(item));
 
-const navObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
+const setActiveNavLink = (id) => {
+  navLinks.forEach((link) => {
+    const isMatch = link.getAttribute("href") === `#${id}`;
+    link.classList.toggle("active", isMatch);
+  });
+};
 
-      const id = entry.target.getAttribute("id");
-      navLinks.forEach((link) => {
-        const isMatch = link.getAttribute("href") === `#${id}`;
-        link.classList.toggle("active", isMatch);
-      });
-    });
-  },
-  { rootMargin: "-35% 0px -45% 0px", threshold: 0.1 }
-);
+const updateActiveSection = () => {
+  const header = document.querySelector(".site-header");
+  const headerHeight = header ? header.offsetHeight : 0;
+  const scrollReference = window.scrollY + headerHeight + 140;
+  let activeId = sections[0]?.getAttribute("id") || "home";
 
-sections.forEach((section) => navObserver.observe(section));
+  sections.forEach((section) => {
+    if (scrollReference >= section.offsetTop) {
+      activeId = section.getAttribute("id");
+    }
+  });
+
+  setActiveNavLink(activeId);
+};
+
+updateActiveSection();
+window.addEventListener("scroll", updateActiveSection, { passive: true });
+window.addEventListener("resize", updateActiveSection);
+window.addEventListener("load", updateActiveSection);
 
 filterButtons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -66,6 +76,7 @@ filterButtons.forEach((button) => {
 
 const animateCounter = (element) => {
   const rawTarget = Number(element.dataset.target);
+  const suffix = element.dataset.suffix || "";
   const duration = 1300;
   const start = performance.now();
 
@@ -74,9 +85,9 @@ const animateCounter = (element) => {
     const currentValue = rawTarget * progress;
 
     if (rawTarget % 1 !== 0) {
-      element.textContent = currentValue.toFixed(2);
+      element.textContent = `${currentValue.toFixed(2)}${suffix}`;
     } else {
-      element.textContent = Math.round(currentValue).toLocaleString("en-IN");
+      element.textContent = `${Math.round(currentValue).toLocaleString("en-IN")}${suffix}`;
     }
 
     if (progress < 1) {
